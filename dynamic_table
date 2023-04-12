@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <script>
+            function addElements () {
+                var employees = [];
+                employees.push({"employeeId": 10001, "firstName": "John", "lastName": "Smith", "middleName": "M","dob": "04/12/1990"});
+                var tableBodyElement = document.getElementById("empTableBody");
+                employees.forEach(e => {
+                    let newRow = document.createElement("tr");
+                    Object.values(e).forEach(val => {
+                        let cell = document.createElement("td");
+                        cell.innerText = val;
+                        newRow.appendChild(cell);
+                    });
+                    tableBodyElement.appendChild(newRow);
+                });
+            }
+            function clear() {
+                var tableBodyElement = document.getElementById("empTableBody");
+                tableBodyElement.innerHTML ='';
+            }
+        </script>
+    </head>
+<body>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #000000;
+            text-align: left;
+            padding: 8px;
+        }
+    </style>
+    <table>
+        <thead>
+            <tr>
+                <td>
+                    Employee Id
+                </td>
+                <td>
+                    First Name
+                </td>
+                <td>
+                    Last Name
+                </td>
+                <td>
+                    Middle Name
+                </td>
+                <td>
+                    Date Of Birth
+                </td>
+            </tr>
+        </thead>
+        <tbody id="empTableBody">
+             
+        </tbody>
+    </table>
+<button onclick="addElements()">Show Employees</button>
+<button onclick="clear()">Clear Employees</button>
+</body>
+
+</html>
