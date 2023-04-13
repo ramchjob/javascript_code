@@ -15,7 +15,7 @@
                     tableBodyElement.appendChild(newRow);
                 });
             }
-            function clear() {
+            function clearElements () {
                 var tableBodyElement = document.getElementById("empTableBody");
                 tableBodyElement.innerHTML ='';
             }
@@ -60,7 +60,7 @@
         </tbody>
     </table>
 <button onclick="addElements()">Show Employees</button>
-<button onclick="clear()">Clear Employees</button>
+<button onclick="clearElements()">Clear Employees</button>
 </body>
 
 </html>
